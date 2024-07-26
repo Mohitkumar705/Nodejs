@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express()
 const db = require("./db");
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000
 
 //Import the router file
 const personRoutes = require('./routes/personRoutes');
@@ -41,6 +43,6 @@ app.get('/', function (req, res) {
 //     res.send("post method is used to send data to the server");
 // })
 
-app.listen(3000 , () => {
+app.listen(PORT , () => {
     console.log("Server run in Port 3000");
 })

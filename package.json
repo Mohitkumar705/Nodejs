@@ -1,0 +1,20 @@
+{
+  "name": "node-tutrioal",
+  "version": "1.0.0",
+  "description": "its a node tutrioal its by mohit kumar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mohit kumar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "formidable": "^3.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.5.1",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4"
+  }
+}

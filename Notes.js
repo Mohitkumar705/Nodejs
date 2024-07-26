@@ -1,0 +1,1 @@
+console.log("Fetching the file in other folder");

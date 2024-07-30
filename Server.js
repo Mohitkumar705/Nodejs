@@ -3,21 +3,37 @@ const app = express()
 const db = require("./db");
 require('dotenv').config();
 
+const passport = require('./auth');
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 const PORT = process.env.PORT || 3000
+
+
+//Midleware request
+const logRequest = (req, res, next) => {
+  console.log(`[${new Date().toLocaleString()}] Request Made to : ${req.originalUrl}`);
+  next();
+}
+app.use(logRequest);
+
+app.use(passport.initialize());
+const Authomiddleware = passport.authenticate('local', {session: false})
+
+
+app.get('/', function (req, res) {
+  res.send('Hello World')
+}) 
 
 //Import the router file
 const personRoutes = require('./routes/personRoutes');
 const menuRouters = require('./routes/menuRouters');
 
 //Use the routes
-app.use('/person', personRoutes); 
-app.use('/menu', menuRouters);
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-}) 
+app.use('/person',  personRoutes); 
+app.use('/menu',   menuRouters);
+
 
 
 // app.get('/checken', (req, res) =>{

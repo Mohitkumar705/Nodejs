@@ -6,7 +6,7 @@ const {jwtAuthMiddleware,generateToken} = require('./../jwt');
 // const { json } = require('body-parser');
 
 
-
+ 
 //Post method to sand the data 
 router.post('/signup' ,  async (req, res) => {
     try {
@@ -54,12 +54,12 @@ router.post('/login', async(req, res) => {
 });
 
 //Profile route
-router.get('/profile', jwtAuthMiddleware, async (req, res) => {
+router.get('/profile',  async (req, res) => {
     try {
         const userData = req.user;
         console.log('User Data', userData);
         const userId = userData.id;
-        const user = await Person.findById(userId)
+        const user = await Person.findById(userId) 
         res.status(200).json({user})
     } catch (error) {
         console.log(error);
@@ -69,7 +69,7 @@ router.get('/profile', jwtAuthMiddleware, async (req, res) => {
 
 
 //Get method get the data for person
-router.get('/', jwtAuthMiddleware, async (req, res) => {
+router.get('/',  async (req, res) => {
     try {
         const data = await Person.find();
         console.log("data sucessfull fetched");

@@ -23,4 +23,4 @@ const generateToken = (userData) => {
     //Generate a new jwt token using user data
     return jwt.sign( userData , process.env.SECRET_KEY , {expiresIn: 9000})
     }
-module.exports = {jwtAuthMiddleware,generateToken};
+module.exports = {jwtAuthMiddleware,generateToken}; 

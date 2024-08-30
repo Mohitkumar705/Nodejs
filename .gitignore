@@ -1,4 +1,4 @@
 # Ignore git modules
 node_modules/
 .env
-# other entries
+# other entries 

@@ -6,7 +6,7 @@ const personSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  age: {
+  age: { 
     type: Number,
   }, 
   work: {

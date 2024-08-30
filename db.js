@@ -29,4 +29,4 @@ db.on("disconnected" , () =>{
 })
 
 //Export the module 
-module.exports = db;
+module.exports = db; 
